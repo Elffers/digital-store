@@ -3,7 +3,7 @@ App.Item = DS.Model.extend({
   quantity: DS.attr('integer'),
   cart: DS.belongsTo('cart'),
   current_price: DS.attr('string')
-})
+});
 
 App.Item.FIXTURES = [
   {

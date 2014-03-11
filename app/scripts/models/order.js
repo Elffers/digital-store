@@ -4,7 +4,7 @@ App.Order = DS.Model.extend({
   email: DS.attr('string'),
   status: DS.attr('string'),
   transaction: DS.attr('string')
-})
+});
 
 App.Cart.FIXTURES = [
   {
