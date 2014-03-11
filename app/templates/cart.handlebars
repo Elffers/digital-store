@@ -1,12 +1,13 @@
 <h1> This is your cart</h1>
-{{ id }}
+{{ id }}<br>
+these are items: {{ items }}
 <div>
   <ul>
-    {{# each items }}
-
+    {{# each items}}
     <li>
+      {{ this.quantity }}
       {{ this.product.name }}
     </li>
-    {{/each}}
+    {{/ each}}
   </ul>
 </div>

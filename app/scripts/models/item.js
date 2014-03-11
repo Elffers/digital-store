@@ -2,7 +2,7 @@ App.Item = DS.Model.extend({
   product: DS.belongsTo('product'),
   quantity: DS.attr('integer'),
   cart: DS.belongsTo('cart'),
-  current_price: DS.attr('integer')
+  current_price: DS.attr('string')
 })
 
 App.Item.FIXTURES = [

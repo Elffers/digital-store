@@ -1,7 +1,7 @@
 App.Cart = DS.Model.extend({
-  items: DS.hasMany('item'),
+  items: DS.hasMany('item', {async: true }),
   order: DS.belongsTo('order')
-})
+});
 
 App.Cart.FIXTURES = [
   {
