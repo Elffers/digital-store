@@ -1,10 +1,18 @@
 Ember.TEMPLATES["application"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
 this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
-  var buffer = '', stack1;
+  var buffer = '', stack1, helper, options, self=this, helperMissing=helpers.helperMissing;
 
+function program1(depth0,data) {
+  
+  
+  data.buffer.push("\n  View your cart\n  ");
+  }
 
-  data.buffer.push("<div class='container'>\n  <h1>Welcome Digital Store</h1>\n  <p class='lead'>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>\n  <hr>\n\n  ");
+  data.buffer.push("<div class='container'>\n  <h1>Welcome Digital Store</h1>\n  <p class='lead'>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>\n  <hr>\n  ");
+  stack1 = (helper = helpers['link-to'] || (depth0 && depth0['link-to']),options={hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(1, program1, data),contexts:[depth0,depth0],types:["STRING","STRING"],data:data},helper ? helper.call(depth0, "cart", "1", options) : helperMissing.call(depth0, "link-to", "cart", "1", options));
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push("\n\n  ");
   stack1 = helpers._triageMustache.call(depth0, "outlet", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
   data.buffer.push("\n\n  <div class='text-muted'><small>Foot</small></div>\n</div>\n");
