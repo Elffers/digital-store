@@ -1,0 +1,12 @@
+<h1> This is your cart</h1>
+{{ id }}
+<div>
+  <ul>
+    {{# each items }}
+
+    <li>
+      {{ this.product.name }}
+    </li>
+    {{/each}}
+  </ul>
+</div>
