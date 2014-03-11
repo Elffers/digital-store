@@ -1,5 +1,5 @@
 App.Cart = DS.Model.extend({
-  items: DS.hasMany('item', {async: true }),
+  items: DS.hasMany('item', { async: true }),
 });
 
 App.Cart.FIXTURES = [

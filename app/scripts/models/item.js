@@ -1,7 +1,7 @@
 App.Item = DS.Model.extend({
-  product: DS.belongsTo('product'),
+  product: DS.belongsTo('product', {async: true }),
   quantity: DS.attr('integer'),
-  cart: DS.belongsTo('cart'),
+  cart: DS.belongsTo('cart', {async: true }),
   current_price: DS.attr('string')
 });
 

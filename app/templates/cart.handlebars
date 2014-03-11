@@ -2,12 +2,20 @@
 {{ id }}<br>
 these are items: {{ items }}
 <div>
-  <ul>
+  <table>
+    <thead>
+      <th>Product</th>
+      <th>Quantity</th>
+      <th>Price</th>
+    </thead>
+    <tbody>
     {{# each items}}
-    <li>
-      {{ this.quantity }}
-      {{ this.product.name }}
-    </li>
-    {{/ each}}
-  </ul>
+      <tr>
+        <td>{{ this.product.name }}</td>
+        <td>{{ this.quantity }}</td>
+        <td>{{ format-currency this.current_price }}</td>
+      </tr>
+      {{/ each}}
+    </tbody>
+  </table>
 </div>
