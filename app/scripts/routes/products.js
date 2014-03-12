@@ -26,12 +26,6 @@ App.ProductsRoute = Ember.Route.extend({
   },
 })
 
-// get cart
-        // create an item
-        // add item to cart
-        // save item
-      // transition to cart (redirect to cart show)
-
       // var store = this.store;
       // var newItem = store.createRecord("item", { quantity: 1 });
       // newItem.save();
@@ -47,6 +41,6 @@ App.ProductsRoute = Ember.Route.extend({
       //   items.pushObject(newItem);
       // });
 
-// store.find('product', 2).then(function(product){
+      // store.find('product', 2).then(function(product){
       //   newItem.set('product', product);
       // });
