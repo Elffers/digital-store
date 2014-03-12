@@ -24,10 +24,10 @@ App.ProductsRoute = Ember.Route.extend({
     },
   },
 
-  setupController: function(controller, model) {
-    this.controllerFor('cart').set('model', this.store.find('cart', 1));
-    controller.set('model', model);
-  },
+  // setupController: function(controller, model) {
+  //   this.controllerFor('cart').set('model', this.store.find('cart', 1));
+  //   controller.set('model', model);
+  // },
 })
       // var store = this.store;
       // var newItem = store.createRecord("item", { quantity: 1 });
