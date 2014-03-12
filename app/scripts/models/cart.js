@@ -1,6 +1,6 @@
 App.Cart = DS.Model.extend({
   items: DS.hasMany('item', { async: true }),
-   subtotal: function(){
+   total: function(){
     var items = this.get('items');
     var prices = items.map(function(item){
       return item.get('subtotal')
