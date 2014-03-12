@@ -2,7 +2,7 @@ App.Item = DS.Model.extend({
   product: DS.belongsTo('product', {async: true }),
   quantity: DS.attr('integer'),
   cart: DS.belongsTo('cart', {async: true }),
-  current_price: DS.attr('string')
+  current_price: DS.attr('integer')
 });
 
 App.Item.FIXTURES = [
@@ -11,36 +11,36 @@ App.Item.FIXTURES = [
     product: 1,
     quantity: 2,
     cart: 1,
-    current_price: "1099"
+    current_price: 1000
   }, {
     id: 2,
     product: 2,
     quantity: 5,
     cart: 2,
-    current_price: "2550"
+    current_price: 2550
   }, {
     id: 3,
     product: 3,
     quantity: 1,
     cart: 1,
-    current_price: "2550"
+    current_price: 2550
   }, {
     id: 4,
     product: 4,
     quantity: 1,
     cart: 2,
-    current_price: "2550"
+    current_price: 2550
   }, {
     id: 5,
     product: 5,
     quantity: 2,
     cart: 1,
-    current_price: "2550"
+    current_price: 2550
   }, {
     id: 6,
     product: 6,
     quantity: 1,
     cart: 2,
-    current_price: "2550"
+    current_price: 2550
   }
 ]

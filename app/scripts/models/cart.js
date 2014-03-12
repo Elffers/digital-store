@@ -1,5 +1,15 @@
 App.Cart = DS.Model.extend({
   items: DS.hasMany('item', { async: true }),
+   subtotal: function(){
+    var items = this.get('items');
+    var prices = items.map(function(item){
+      return item.get('quantity') * item.get('current_price')
+    });
+    var sum = prices.reduce(function(previousValue, currentValue){
+      return previousValue + currentValue
+    }, 0);
+    return sum
+  }.property('items.@each.current_price')
 });
 
 App.Cart.FIXTURES = [
@@ -11,3 +21,8 @@ App.Cart.FIXTURES = [
     items: [2, 4, 6]
   }
 ]
+
+// prices = items.map(function(item){
+    //   item.get('product').get('price');
+    // });
+    // sum = prices.reduce();

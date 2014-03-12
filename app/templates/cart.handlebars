@@ -13,9 +13,15 @@ these are items: {{ items }}
       <tr>
         <td>{{ this.product.name }}</td>
         <td>{{ this.quantity }}</td>
-        <td>{{ format-currency this.current_price }}</td>
+        <td>{{ format-currency this.product.price }}</td>
       </tr>
       {{/ each}}
+      <tr>
+        <td><strong>Subtotal</strong></td>
+        <td></td>
+        <td> {{ subtotal }} </td>
+
+      </tr>
     </tbody>
   </table>
 </div>
