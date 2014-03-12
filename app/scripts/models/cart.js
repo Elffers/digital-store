@@ -9,7 +9,7 @@ App.Cart = DS.Model.extend({
       return previousValue + currentValue
     }, 0);
     return sum
-  }.property('items.@each.current_price')
+  }.property('items.@each.quantity')
 });
 
 App.Cart.FIXTURES = [
