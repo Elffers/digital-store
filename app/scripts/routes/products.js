@@ -10,8 +10,7 @@ App.ProductsRoute = Ember.Route.extend({
           product: product,
           cart: cart,
           quantity: 1,
-          current_price:
-          product.get('price')
+          current_price: product.get('price')
         });
 
         cart.get("items").then(function(items){
@@ -24,8 +23,12 @@ App.ProductsRoute = Ember.Route.extend({
       this.transitionTo('cart', 1);
     },
   },
-})
 
+  setupController: function(controller, model) {
+    this.controllerFor('cart').set('model', this.store.find('cart', 1));
+    controller.set('model', model);
+  },
+})
       // var store = this.store;
       // var newItem = store.createRecord("item", { quantity: 1 });
       // newItem.save();
@@ -33,9 +36,6 @@ App.ProductsRoute = Ember.Route.extend({
       // var currentCart = store.find("cart", 1).then(function(cart) {
       //   newItem.set('cart', cart);
       // });
-
-      // console.log(currentCart);
-      // console.log(newItem);
 
       // currentCart.get("items").then(function(items) {
       //   items.pushObject(newItem);
