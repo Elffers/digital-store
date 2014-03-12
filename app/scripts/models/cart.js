@@ -3,13 +3,13 @@ App.Cart = DS.Model.extend({
    subtotal: function(){
     var items = this.get('items');
     var prices = items.map(function(item){
-      return item.get('quantity') * item.get('current_price')
+      return item.get('subtotal')
     });
     var sum = prices.reduce(function(previousValue, currentValue){
       return previousValue + currentValue
     }, 0);
     return sum
-  }.property('items.@each.quantity')
+  }.property('items.@each.subtotal')
 });
 
 App.Cart.FIXTURES = [

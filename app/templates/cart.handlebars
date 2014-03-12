@@ -6,17 +6,20 @@
       <th>Product</th>
       <th>Quantity</th>
       <th>Price</th>
+      <th>Subtotal</th>
     </thead>
     <tbody>
     {{# each items}}
       <tr>
         <td>{{ this.product.name }}</td>
         <td>{{input type="number" value=quantity min=1}}</td>
+        <td>{{ format-currency this.current_price }}</td>
         <td>{{ format-currency this.subtotal }}</td>
       </tr>
       {{/ each}}
       <tr>
-        <td><strong>Subtotal</strong></td>
+        <td><strong>Total</strong></td>
+        <td></td>
         <td></td>
         <td> {{ format-currency subtotal }} </td>
       </tr>
