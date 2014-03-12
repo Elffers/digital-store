@@ -1,6 +1,5 @@
 <h1> This is your cart</h1>
 {{ id }}<br>
-these are items: {{ items }}
 <div>
   <table>
     <thead>
@@ -19,8 +18,7 @@ these are items: {{ items }}
       <tr>
         <td><strong>Subtotal</strong></td>
         <td></td>
-        <td> {{ subtotal }} </td>
-
+        <td> {{ format-currency subtotal }} </td>
       </tr>
     </tbody>
   </table>

@@ -21,8 +21,3 @@ App.Cart.FIXTURES = [
     items: [2, 4, 6]
   }
 ]
-
-// prices = items.map(function(item){
-    //   item.get('product').get('price');
-    // });
-    // sum = prices.reduce();
