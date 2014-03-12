@@ -38,7 +38,7 @@ function program1(depth0,data) {
     'min': (1)
   },hashTypes:{'type': "STRING",'value': "ID",'min': "INTEGER"},hashContexts:{'type': depth0,'value': depth0,'min': depth0},contexts:[],types:[],data:data},helper ? helper.call(depth0, options) : helperMissing.call(depth0, "input", options))));
   data.buffer.push("</td>\n        <td>");
-  data.buffer.push(escapeExpression((helper = helpers['format-currency'] || (depth0 && depth0['format-currency']),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data},helper ? helper.call(depth0, "product.price", options) : helperMissing.call(depth0, "format-currency", "product.price", options))));
+  data.buffer.push(escapeExpression((helper = helpers['format-currency'] || (depth0 && depth0['format-currency']),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data},helper ? helper.call(depth0, "subtotal", options) : helperMissing.call(depth0, "format-currency", "subtotal", options))));
   data.buffer.push("</td>\n      </tr>\n      ");
   return buffer;
   }

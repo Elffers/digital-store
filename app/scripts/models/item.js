@@ -2,7 +2,10 @@ App.Item = DS.Model.extend({
   product: DS.belongsTo('product', {async: true }),
   quantity: DS.attr('integer'),
   cart: DS.belongsTo('cart', {async: true }),
-  current_price: DS.attr('integer')
+  current_price: DS.attr('integer'),
+  subtotal: function(){
+    return this.get('quantity') * this.get('current_price')
+  }.property('quantity', 'current_price')
 });
 
 App.Item.FIXTURES = [
