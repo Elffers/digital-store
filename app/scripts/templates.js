@@ -1,3 +1,18 @@
+Ember.TEMPLATES["admin"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
+this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
+  var buffer = '', helper, options, helperMissing=helpers.helperMissing, escapeExpression=this.escapeExpression;
+
+
+  data.buffer.push("<h1>ADMIN PAGE</h1>\n<div class='row'>\n  <div class='col-lg-4'>\n    <h2>Orders</h2>\n    ");
+  data.buffer.push(escapeExpression((helper = helpers.outlet || (depth0 && depth0.outlet),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data},helper ? helper.call(depth0, "orders", options) : helperMissing.call(depth0, "outlet", "orders", options))));
+  data.buffer.push("\n  </div>\n  <div class='col-lg-8'>\n    <h2>Products</h2>\n    ");
+  data.buffer.push(escapeExpression((helper = helpers.outlet || (depth0 && depth0.outlet),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data},helper ? helper.call(depth0, "products", options) : helperMissing.call(depth0, "outlet", "products", options))));
+  data.buffer.push("\n  </div>\n</div>");
+  return buffer;
+  
+});
+
 Ember.TEMPLATES["application"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
 this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
@@ -43,11 +58,13 @@ function program1(depth0,data) {
   data.buffer.push(escapeExpression((helper = helpers['format-currency'] || (depth0 && depth0['format-currency']),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data},helper ? helper.call(depth0, "current_price", options) : helperMissing.call(depth0, "format-currency", "current_price", options))));
   data.buffer.push("</td>\n        <td>");
   data.buffer.push(escapeExpression((helper = helpers['format-currency'] || (depth0 && depth0['format-currency']),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data},helper ? helper.call(depth0, "subtotal", options) : helperMissing.call(depth0, "format-currency", "subtotal", options))));
-  data.buffer.push("</td>\n      </tr>\n      ");
+  data.buffer.push("</td>\n        <td><button href=\"#\" ");
+  data.buffer.push(escapeExpression(helpers.action.call(depth0, "removeItem", "", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0,depth0],types:["STRING","ID"],data:data})));
+  data.buffer.push(">Remove</button></td>\n\n      </tr>\n      ");
   return buffer;
   }
 
-  data.buffer.push("<h1> This is your cart</h1>\n<div>\n  <table>\n    <thead>\n      <th>Product</th>\n      <th>Quantity</th>\n      <th>Price</th>\n      <th>Subtotal</th>\n    </thead>\n    <tbody>\n    ");
+  data.buffer.push("<h1> This is your cart</h1>\n<div>\n  <table>\n    <thead>\n      <th>Product</th>\n      <th>Quantity</th>\n      <th>Price</th>\n      <th>Subtotal</th>\n      <th></th>\n\n    </thead>\n    <tbody>\n    ");
   stack1 = helpers.each.call(depth0, "items", {hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(1, program1, data),contexts:[depth0],types:["ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
   data.buffer.push("\n      <tr>\n        <td><strong>Total</strong></td>\n        <td></td>\n        <td></td>\n        <td> ");
@@ -91,7 +108,7 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
 Ember.TEMPLATES["orders"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
 this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
-  var buffer = '', stack1, self=this, helperMissing=helpers.helperMissing;
+  var buffer = '', stack1, helper, options, self=this, helperMissing=helpers.helperMissing, escapeExpression=this.escapeExpression;
 
 function program1(depth0,data) {
   
@@ -115,13 +132,15 @@ function program2(depth0,data) {
   return buffer;
   }
 
-  data.buffer.push("THIS IS AN ORDER\n\n<h1>Orders Index</h1>\n<div class='row'>\n  <div class='col-lg-2'>\n    <table>\n      <thead>\n        <th>Customer</th>\n        <th>Status</th>\n      </thead>\n      <tbody>\n        ");
+  data.buffer.push("THIS IS AN ORDER\n<h1>Orders Index</h1>\n<div class='row'>\n  <div class='col-lg-2'>\n    <table>\n      <thead>\n        <th>Customer</th>\n        <th>Status</th>\n      </thead>\n      <tbody>\n        ");
   stack1 = helpers.each.call(depth0, {hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(1, program1, data),contexts:[],types:[],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
   data.buffer.push("\n      </tbody>\n    </table>\n  </div>\n  <div class='col-lg-10'>\n    ");
   stack1 = helpers._triageMustache.call(depth0, "outlet", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("\n  </div>\n</div>");
+  data.buffer.push("\n    ");
+  data.buffer.push(escapeExpression((helper = helpers.outlet || (depth0 && depth0.outlet),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data},helper ? helper.call(depth0, "sidebar", options) : helperMissing.call(depth0, "outlet", "sidebar", options))));
+  data.buffer.push("\n\n  </div>\n</div>");
   return buffer;
   
 });

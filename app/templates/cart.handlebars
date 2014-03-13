@@ -6,6 +6,8 @@
       <th>Quantity</th>
       <th>Price</th>
       <th>Subtotal</th>
+      <th></th>
+
     </thead>
     <tbody>
     {{# each items}}
@@ -14,6 +16,8 @@
         <td>{{ input type="number" value=quantity min=1 }}</td>
         <td>{{ format-currency this.current_price }}</td>
         <td>{{ format-currency this.subtotal }}</td>
+        <td><button href="#" {{ action 'removeItem' this }}>Remove</button></td>
+
       </tr>
       {{/ each}}
       <tr>
