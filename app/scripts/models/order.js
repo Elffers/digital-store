@@ -12,5 +12,11 @@ App.Order.FIXTURES = [
     customer_name: "Ada Lovelace",
     email: 'adarocks@lovelace.com',
     status: 'pending',
+  }, {
+    id: 2,
+    cart: 2,
+    customer_name: "Eric Hodel",
+    email: 'eric@hodel.com',
+    status: 'paid',
   }
 ]
