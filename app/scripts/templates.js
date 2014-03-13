@@ -64,15 +64,36 @@ function program1(depth0,data) {
   return buffer;
   }
 
+function program3(depth0,data) {
+  
+  
+  data.buffer.push("\n  checkout?\n  ");
+  }
+
   data.buffer.push("<h1> This is your cart</h1>\n<div>\n  <table>\n    <thead>\n      <th>Product</th>\n      <th>Quantity</th>\n      <th>Price</th>\n      <th>Subtotal</th>\n      <th></th>\n\n    </thead>\n    <tbody>\n    ");
   stack1 = helpers.each.call(depth0, "items", {hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(1, program1, data),contexts:[depth0],types:["ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
   data.buffer.push("\n      <tr>\n        <td><strong>Total</strong></td>\n        <td></td>\n        <td></td>\n        <td> ");
   data.buffer.push(escapeExpression((helper = helpers['format-currency'] || (depth0 && depth0['format-currency']),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data},helper ? helper.call(depth0, "total", options) : helperMissing.call(depth0, "format-currency", "total", options))));
-  data.buffer.push(" </td>\n      </tr>\n    </tbody>\n  </table>\n  <button href=\"#\" ");
+  data.buffer.push(" </td>\n      </tr>\n    </tbody>\n  </table>\n  <a href=\"#\" ");
   data.buffer.push(escapeExpression(helpers.action.call(depth0, "checkout", "", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0,depth0],types:["STRING","ID"],data:data})));
-  data.buffer.push(">Checkout</button>\n</div>\n");
+  data.buffer.push(">Checkout</a>\n  <!-- ");
+  stack1 = (helper = helpers['link-to'] || (depth0 && depth0['link-to']),options={hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(3, program3, data),contexts:[depth0,depth0],types:["ID","ID"],data:data},helper ? helper.call(depth0, "cart.checkout", "", options) : helperMissing.call(depth0, "link-to", "cart.checkout", "", options));
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push(" -->\n</div>\n\n<div>");
+  data.buffer.push(escapeExpression((helper = helpers.outlet || (depth0 && depth0.outlet),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data},helper ? helper.call(depth0, "checkout", options) : helperMissing.call(depth0, "outlet", "checkout", options))));
+  data.buffer.push("</div>");
   return buffer;
+  
+});
+
+Ember.TEMPLATES["checkout"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
+this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
+  
+
+
+  data.buffer.push("HELLO? CHECKOUT PLZ?");
   
 });
 

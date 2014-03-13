@@ -3,8 +3,8 @@ App.CartRoute = Ember.Route.extend({
     return this.store.find("cart", params.cart_id);
   },
   actions: {
-    checkout: function(){
-
+    checkout: function(cart){
+      this.transitionTo('cart.checkout', cart);
     },
 
     removeItem: function(item) {
