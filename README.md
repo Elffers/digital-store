@@ -1,6 +1,6 @@
 # Digistore
 
-## ADA Week 18 Project
+## [ADA Week 18 Project](https://github.com/Ada-Developers-Academy/daily-curriculum/blob/master/week18/ember-project.md)
 
 In this project we will be building an ember.js appliction using a service backed
 data source. The application will focus on building a multi-model commerce site,
