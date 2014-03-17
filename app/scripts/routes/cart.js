@@ -12,6 +12,18 @@ App.CartRoute = Ember.Route.extend({
         });
         item.save();
       });
+    },
+    purchase: function(proxy){
+      var self = this
+      var order = this.store.createRecord("order", proxy);
+      order.save().then(
+        function(order){
+          self.transitionTo("order", order)
+        },
+        function(error){
+          console.log('OOPS')
+        }
+      );
     }
   }
 

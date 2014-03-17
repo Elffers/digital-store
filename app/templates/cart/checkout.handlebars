@@ -1,1 +1,32 @@
-HELLO? CHECKOUT PLZ?
+<div class='form-group'>
+  <label for="customer_name">First name</label>
+  {{input type='text' value=first_name class='form-control'}}
+</div>
+<div class='form-group'>
+  <label for="last_name">Last name</label>
+  {{input type='text' value=last_name class='form-control'}}
+</div>
+<div class='form-group'>
+  <label for="email">Email</label>
+  {{input type='text' value=email class='form-control'}}
+</div>
+<div class='form-group'>
+  <label for="credit_card">Credit Card</label>
+  {{input type='text' value=credit_card class='form-control'}}
+</div>
+<div class='form-group'>
+  <label for="cvv">cvv</label>
+  {{input type='text' value=cvv class='form-control'}}
+</div>
+<div class='form-group'>
+  <label for="zip_code">Zip Code</label>
+  {{input type='text' value=zip_code class='form-control'}}
+</div>
+<div class='form-group'>
+  <label for="expiration">Expiration</label>
+  {{input type='text' value=expiration class='form-control'}}
+</div>
+  <!-- {{input type='hidden' name=cart_id value= this class='form-control'}}
+  {{input type='hidden' name=status value='pending' class='form-control'}} -->
+
+<button class='btn btn-success' {{action "purchase" this}}>Purchase!</button>
