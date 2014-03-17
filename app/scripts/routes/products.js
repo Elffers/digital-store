@@ -23,24 +23,4 @@ App.ProductsRoute = Ember.Route.extend({
       this.transitionTo('cart', 1);
     },
   },
-
-  // setupController: function(controller, model) {
-  //   this.controllerFor('cart').set('model', this.store.find('cart', 1));
-  //   controller.set('model', model);
-  // },
 })
-      // var store = this.store;
-      // var newItem = store.createRecord("item", { quantity: 1 });
-      // newItem.save();
-
-      // var currentCart = store.find("cart", 1).then(function(cart) {
-      //   newItem.set('cart', cart);
-      // });
-
-      // currentCart.get("items").then(function(items) {
-      //   items.pushObject(newItem);
-      // });
-
-      // store.find('product', 2).then(function(product){
-      //   newItem.set('product', product);
-      // });
