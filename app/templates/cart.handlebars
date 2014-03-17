@@ -1,5 +1,5 @@
 <h1> This is your cart</h1>
-<div>
+<div class='cart'>
   <table>
     <thead>
       <th>Product</th>
@@ -27,7 +27,7 @@
       </tr>
     </tbody>
   </table>
-  {{# link-to 'cart.checkout' this }}Checkout{{/link-to}}
+  {{# link-to 'cart.checkout' this class='btn btn-default' }}Checkout{{/link-to}}
 </div>
 
-<div>{{ outlet }}</div>
+{{ outlet }}
