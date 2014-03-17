@@ -1,4 +1,14 @@
 App.AdminRoute = Ember.Route.extend({
+  model: function (params) {
+    return this.store.find("order");
+  },
+  actions: {
+    update_status: function(order){
+      console.log('paid');
+      order.set('status', 'paid')
+    }
+
+  }
 
   // renderTemplate: function() {
   //   // var productsController = this.controllerFor('products');
