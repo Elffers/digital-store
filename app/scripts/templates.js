@@ -89,7 +89,7 @@ function program3(depth0,data) {
 Ember.TEMPLATES["cart/checkout"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
 this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
-  var buffer = '', helper, options, helperMissing=helpers.helperMissing, escapeExpression=this.escapeExpression;
+  var buffer = '', stack1, helper, options, helperMissing=helpers.helperMissing, escapeExpression=this.escapeExpression;
 
 
   data.buffer.push("<div class='form-group'>\n  <label for=\"customer_name\">First name</label>\n  ");
@@ -134,21 +134,10 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
     'value': ("expiration"),
     'class': ("form-control")
   },hashTypes:{'type': "STRING",'value': "ID",'class': "STRING"},hashContexts:{'type': depth0,'value': depth0,'class': depth0},contexts:[],types:[],data:data},helper ? helper.call(depth0, options) : helperMissing.call(depth0, "input", options))));
-  data.buffer.push("\n</div>\n  <!-- ");
-  data.buffer.push(escapeExpression((helper = helpers.input || (depth0 && depth0.input),options={hash:{
-    'type': ("hidden"),
-    'name': ("cart_id"),
-    'value': (""),
-    'class': ("form-control")
-  },hashTypes:{'type': "STRING",'name': "ID",'value': "ID",'class': "STRING"},hashContexts:{'type': depth0,'name': depth0,'value': depth0,'class': depth0},contexts:[],types:[],data:data},helper ? helper.call(depth0, options) : helperMissing.call(depth0, "input", options))));
-  data.buffer.push("\n  ");
-  data.buffer.push(escapeExpression((helper = helpers.input || (depth0 && depth0.input),options={hash:{
-    'type': ("hidden"),
-    'name': ("status"),
-    'value': ("pending"),
-    'class': ("form-control")
-  },hashTypes:{'type': "STRING",'name': "ID",'value': "STRING",'class': "STRING"},hashContexts:{'type': depth0,'name': depth0,'value': depth0,'class': depth0},contexts:[],types:[],data:data},helper ? helper.call(depth0, options) : helperMissing.call(depth0, "input", options))));
-  data.buffer.push(" -->\n\n<button class='btn btn-success' ");
+  data.buffer.push("\n</div>\n");
+  stack1 = helpers._triageMustache.call(depth0, "", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push("\n<button class='btn btn-success' ");
   data.buffer.push(escapeExpression(helpers.action.call(depth0, "purchase", "", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0,depth0],types:["STRING","ID"],data:data})));
   data.buffer.push(">Purchase!</button>\n");
   return buffer;
@@ -179,7 +168,13 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
   data.buffer.push("</small></h1>\n  <h3>Total: ");
   data.buffer.push(escapeExpression((helper = helpers['format-currency'] || (depth0 && depth0['format-currency']),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data},helper ? helper.call(depth0, "cart.total", options) : helperMissing.call(depth0, "format-currency", "cart.total", options))));
-  data.buffer.push("</h3>\n</div>");
+  data.buffer.push("</h3>\n  <h3>Status: ");
+  stack1 = helpers._triageMustache.call(depth0, "status", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push("</h3>\n  credit card: ");
+  stack1 = helpers._triageMustache.call(depth0, "credit_card", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push("\n</div>");
   return buffer;
   
 });

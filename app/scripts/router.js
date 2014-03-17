@@ -5,7 +5,7 @@ App.Router.map(function(){
     this.resource('product', { path: ':product_id' })
   });
 
-  this.resource('cart', { path: '/cart/:cart_id' }, function(){
+  this.resource('cart', { path: 'cart/:cart_id' }, function(){
     this.route('checkout')
   });
 
