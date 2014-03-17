@@ -28,10 +28,7 @@
       </tr>
     </tbody>
   </table>
-  <a href="#" {{ action 'checkout' this }}>Checkout</a>
-  <!-- {{# link-to cart.checkout this }}
-  checkout?
-  {{/link-to}} -->
+  {{# link-to 'cart.checkout' this }}Checkout{{/link-to}}
 </div>
 
-<div>{{ outlet checkout }}</div>
+<div>{{ outlet }}</div>
