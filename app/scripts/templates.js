@@ -27,7 +27,7 @@ function program2(depth0,data) {
   return buffer;
   }
 
-  data.buffer.push("<h1>ADMIN PAGE</h1>\n<div class='row'>\n  <div class='col-lg-6'>\n    <h2>Orders</h2>\n    <table>\n      <thead>\n        <th>Customer</th>\n        <th>Status</th>\n        <th>Update</th>\n      </thead>\n      <tbody>\n      ");
+  data.buffer.push("<h1>ADMIN PAGE</h1>\n<div class='row'>\n  <div class='col-lg-6'>\n    <h2>Orders</h2>\n    <table class='table table-hover'>\n      <thead>\n        <th>Customer</th>\n        <th>Status</th>\n        <th>Update</th>\n      </thead>\n      <tbody>\n      ");
   stack1 = helpers.each.call(depth0, {hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(1, program1, data),contexts:[],types:[],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
   data.buffer.push("\n    </table>\n    ");
