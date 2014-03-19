@@ -1,7 +1,3 @@
-App.CartAdapater = DS.LSADapter.extend({
-  namespace: "foo"
-});
-
 App.Cart = DS.Model.extend({
   items: DS.hasMany('item', { async: true }),
   total: function(){
