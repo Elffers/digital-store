@@ -1,3 +1,7 @@
+App.CartAdapater = DS.LSADapter.extend({
+  namespace: "foo"
+});
+
 App.Cart = DS.Model.extend({
   items: DS.hasMany('item', { async: true }),
   total: function(){
@@ -12,12 +16,12 @@ App.Cart = DS.Model.extend({
   }.property('items.@each.subtotal')
 });
 
-App.Cart.FIXTURES = [
-  {
-    id: 1,
-    items: [1, 3, 5]
-  }, {
-    id: 2,
-    items: [2, 4, 6]
-  }
-]
+// App.Cart.FIXTURES = [
+//   {
+//     id: 1,
+//     items: [1, 3, 5]
+//   }, {
+//     id: 2,
+//     items: [2, 4, 6]
+//   }
+// ]
