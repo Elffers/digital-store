@@ -1,5 +1,5 @@
-App.CartAdapater = DS.LSADapter.extend({
-  namespace: "foo"
+App.CartAdapter = DS.LSAdapter.extend({
+  namespace: 'digistore'
 });
 
 App.Cart = DS.Model.extend({
