@@ -1,6 +1,13 @@
 <div>
   <h1>{{ customer_name }} <small>{{ email }}</small></h1>
-  <h3>Total: {{ format-currency total}}</h3>
-  <h3>Status: {{ status }}</h3>
-  credit card: {{ credit_card}}
+  <ul>
+    <li>Total: {{ format-currency total}}</li>
+    <li>Status: {{ status }}</li>
+    <li>credit card: {{ credit_card}}</li>
+  </ul>
+  <ul>
+    {{# each items}}
+    {{ name }}
+    {{/each}}
+  </ul>
 </div>

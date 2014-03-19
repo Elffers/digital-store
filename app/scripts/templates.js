@@ -181,8 +181,17 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
 Ember.TEMPLATES["order"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
 this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
-  var buffer = '', stack1, helper, options, helperMissing=helpers.helperMissing, escapeExpression=this.escapeExpression;
+  var buffer = '', stack1, helper, options, helperMissing=helpers.helperMissing, escapeExpression=this.escapeExpression, self=this;
 
+function program1(depth0,data) {
+  
+  var buffer = '', stack1;
+  data.buffer.push("\n    ");
+  stack1 = helpers._triageMustache.call(depth0, "name", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push("\n    ");
+  return buffer;
+  }
 
   data.buffer.push("<div>\n  <h1>");
   stack1 = helpers._triageMustache.call(depth0, "customer_name", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
@@ -190,15 +199,18 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
   data.buffer.push(" <small>");
   stack1 = helpers._triageMustache.call(depth0, "email", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("</small></h1>\n  <h3>Total: ");
+  data.buffer.push("</small></h1>\n  <ul>\n    <li>Total: ");
   data.buffer.push(escapeExpression((helper = helpers['format-currency'] || (depth0 && depth0['format-currency']),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data},helper ? helper.call(depth0, "total", options) : helperMissing.call(depth0, "format-currency", "total", options))));
-  data.buffer.push("</h3>\n  <h3>Status: ");
+  data.buffer.push("</li>\n    <li>Status: ");
   stack1 = helpers._triageMustache.call(depth0, "status", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("</h3>\n  credit card: ");
+  data.buffer.push("</li>\n    <li>credit card: ");
   stack1 = helpers._triageMustache.call(depth0, "credit_card", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("\n</div>");
+  data.buffer.push("</li>\n  </ul>\n  <ul>\n    ");
+  stack1 = helpers.each.call(depth0, "items", {hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(1, program1, data),contexts:[depth0],types:["ID"],data:data});
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push("\n  </ul>\n</div>");
   return buffer;
   
 });
@@ -230,10 +242,10 @@ function program2(depth0,data) {
   return buffer;
   }
 
-  data.buffer.push("THIS IS AN ORDER\n<h1>Orders Index</h1>\n<div class='row'>\n  <div class='col-lg-2'>\n    <table>\n      <thead>\n        <th>Customer</th>\n        <th>Status</th>\n      </thead>\n      <tbody>\n        ");
+  data.buffer.push("THIS IS AN ORDER\n<h1>Orders Index</h1>\n<div class='row'>\n  <div class='col-lg-4'>\n    <table class='table table-hover'>\n      <thead>\n        <th>Customer</th>\n        <th>Status</th>\n      </thead>\n      <tbody>\n        ");
   stack1 = helpers.each.call(depth0, {hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(1, program1, data),contexts:[],types:[],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("\n      </tbody>\n    </table>\n  </div>\n  <div class='col-lg-10'>\n    ");
+  data.buffer.push("\n      </tbody>\n    </table>\n  </div>\n  <div class='col-lg-8'>\n    ");
   stack1 = helpers._triageMustache.call(depth0, "outlet", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
   data.buffer.push("\n    ");

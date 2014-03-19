@@ -1,5 +1,6 @@
 App.Order = DS.Model.extend({
   cart: DS.belongsTo('cart', {async: true }),
+  items: DS.hasMany('item', { async: true }),
   first_name: DS.attr('string'),
   last_name: DS.attr('string'),
   email: DS.attr('string'),
