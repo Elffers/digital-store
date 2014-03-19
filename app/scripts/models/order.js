@@ -3,6 +3,7 @@ App.Order = DS.Model.extend({
   first_name: DS.attr('string'),
   last_name: DS.attr('string'),
   email: DS.attr('string'),
+  total: DS.attr('number'),
   status: DS.attr('string'),
   credit_card: DS.attr('string'),
   cvv: DS.attr('string'),
