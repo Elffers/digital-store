@@ -1,3 +1,7 @@
+App.CartAdapter = DS.LSAdapter.extend({
+  namespace: 'digistore'
+});
+
 App.Cart = DS.Model.extend({
   items: DS.hasMany('item', { async: true }),
   total: function(){
