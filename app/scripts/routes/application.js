@@ -3,7 +3,7 @@ App.ApplicationRoute = Ember.Route.extend({
     if (typeof(localStorage.cartId) === "undefined") {
       var cart = this.store.createRecord("cart");
       cart.save().then(function (cart) {
-        localStorage.cartId = cart.id;
+        localStorage.cartId = cart.get('id');
       });
     }
   },
