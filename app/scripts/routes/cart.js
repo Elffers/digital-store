@@ -24,24 +24,6 @@ App.CartRoute = Ember.Route.extend({
         item.decrementProperty("quantity");
         item.save();
       }
-    },
-
-    purchase: function(proxy){
-      var self = this
-      var cart = this.modelFor('application');
-      var order = this.store.createRecord("order", proxy);
-      order.set('status', 'pending');
-      order.set('cart', this.modelFor('cart'));
-      order.save().then(
-        function(order){
-          self.transitionTo("order", order)
-        },
-        function(error){
-          console.log('OOPS');
-          order.deleteRecord();
-          alert(error.responseText)
-        }
-      );
     }
   }
 })
