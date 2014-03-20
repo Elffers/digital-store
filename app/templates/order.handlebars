@@ -1,9 +1,11 @@
 <div>
   <h1>{{ customer_name }} <small>{{ email }}</small></h1>
   <ul>
-    <li>Total: {{ format-currency total}}</li>
+    <li>Total: {{ format-currency this.cart.total}}</li>
     <li>Status: {{ status }}</li>
-    <li>credit card: {{ credit_card}}</li>
+    <li>credit card: {{ credit_card }}</li>
+    <li>credit card: {{ cvv }}</li>
+
   </ul>
   <ul>
     {{# each items}}
