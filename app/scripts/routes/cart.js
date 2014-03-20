@@ -11,6 +11,11 @@ App.CartRoute = Ember.Route.extend({
         item.deleteRecord(item);
         item.save();
       });
+    },
+
+    add: function(item){
+      item.incrementProperty("quantity");
+      item.save();
     }
   }
 })
