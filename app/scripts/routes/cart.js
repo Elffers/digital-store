@@ -1,5 +1,5 @@
 App.CartRoute = Ember.Route.extend({
-  model: function (params) {
+  model: function () {
     return this.modelFor("application")
   },
   actions: {
