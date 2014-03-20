@@ -1,8 +1,8 @@
 App.Item = DS.Model.extend({
   product: DS.belongsTo('product', {async: true }),
   quantity: DS.attr('number'),
-  // cart: DS.belongsTo('cart', {async: true }),
-  order: DS.belongsTo('order', {async: true }),
+  cart: DS.belongsTo('cart', {async: true }),
+  // order: DS.belongsTo('order', {async: true }),
   current_price: DS.attr('number'),
   subtotal: function(){
     return this.get('quantity') * this.get('current_price')

@@ -4,16 +4,18 @@ App.CartRoute = Ember.Route.extend({
   },
   actions: {
     removeItem: function(item) {
-      var store = this.store
-      this.store.find('cart', 1).then(function(cart){
-        store.deleteRecord(item);
-        cart.get("items").then(function(items){
-          items.removeObject(item);
-        });
+      var store = this.store;
+      var cart = this.modelFor('application');
+      cart.get("items").then(function(items){
+        items.removeObject(item);
+        item.deleteRecord(item);
         item.save();
-      })
+      });
     }
-    // purchase: function(proxy){
+  }
+})
+
+// purchase: function(proxy){
     //   var self = this
     //   var order = this.store.createRecord("order", proxy);
     //   debugger;
@@ -30,6 +32,3 @@ App.CartRoute = Ember.Route.extend({
     //     }
     //   );
     // }
-  }
-
-})
