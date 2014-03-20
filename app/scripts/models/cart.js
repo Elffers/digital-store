@@ -1,7 +1,3 @@
-App.CartAdapter = DS.LSAdapter.extend({
-  namespace: 'digistore'
-});
-
 App.Cart = DS.Model.extend({
   items: DS.hasMany('item', { async: true }),
   total: function(){
@@ -15,13 +11,3 @@ App.Cart = DS.Model.extend({
     return sum
   }.property('items.@each.subtotal')
 });
-
-// App.Cart.FIXTURES = [
-//   {
-//     id: 1,
-//     items: [1, 3, 5]
-//   }, {
-//     id: 2,
-//     items: [2, 4, 6]
-//   }
-// ]

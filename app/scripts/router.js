@@ -5,12 +5,11 @@ App.Router.map(function(){
     this.resource('product', { path: ':product_id' })
   });
 
-  this.resource('cart', { path: 'cart/:cart_id' }, function(){
-    this.route('checkout')
-  });
+  this.resource('orders');
+  this.resource('order', { path: '/orders/:order_id' });
 
-  this.resource('orders', function(){
-    this.resource('order', { path: ':order_id' })
+  this.resource('cart',function(){
+    this.route('checkout')
   });
 
   this.route('admin');
