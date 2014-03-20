@@ -16,6 +16,14 @@ App.CartRoute = Ember.Route.extend({
     add: function(item){
       item.incrementProperty("quantity");
       item.save();
+    },
+
+    subtract: function(item){
+      var quantity = item.get('quantity');
+      if(quantity > 0){
+        item.decrementProperty("quantity");
+        item.save();
+      }
     }
   }
 })

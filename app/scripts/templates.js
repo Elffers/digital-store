@@ -80,7 +80,7 @@ function program1(depth0,data) {
   data.buffer.push("\n        <button ");
   data.buffer.push(escapeExpression(helpers.action.call(depth0, "add", "", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0,depth0],types:["STRING","ID"],data:data})));
   data.buffer.push(">+</button>\n        <button ");
-  data.buffer.push(escapeExpression(helpers.action.call(depth0, "more", "subtract", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0,depth0],types:["STRING","ID"],data:data})));
+  data.buffer.push(escapeExpression(helpers.action.call(depth0, "subtract", "", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0,depth0],types:["STRING","ID"],data:data})));
   data.buffer.push(">-</button>\n        </td>\n        <td>");
   data.buffer.push(escapeExpression((helper = helpers['format-currency'] || (depth0 && depth0['format-currency']),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data},helper ? helper.call(depth0, "current_price", options) : helperMissing.call(depth0, "format-currency", "current_price", options))));
   data.buffer.push("</td>\n        <td>");

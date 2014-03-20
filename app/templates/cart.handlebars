@@ -14,7 +14,7 @@
         <td>{{ product.name }}</td>
         <td>{{ quantity }}
         <button {{ action 'add' this }}>+</button>
-        <button {{ action 'more' subtract }}>-</button>
+        <button {{ action 'subtract' this }}>-</button>
         </td>
         <td>{{ format-currency this.current_price }}</td>
         <td>{{ format-currency this.subtotal }}</td>
