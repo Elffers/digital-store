@@ -9,23 +9,24 @@
       <th></th>
     </thead>
     <tbody>
-    {{# each items}}
-      <tr>
-        <td>{{ product.name }}</td>
-        <td>{{ quantity }}
-        <button {{ action 'add' this }}>+</button>
-        <button {{ action 'subtract' this }}>-</button>
-        </td>
-        <td>{{ format-currency this.current_price }}</td>
-        <td>{{ format-currency this.subtotal }}</td>
-        <td><button href="#" {{ action 'removeItem' this }}>Remove</button></td>
-      </tr>
+      {{# each items}}
+        <tr>
+          <td>{{ product.name }}</td>
+          <td>{{ quantity }}
+          <button {{ action 'add' this }}>+</button>
+          <button {{ action 'subtract' this }}>-</button>
+          </td>
+          <td>{{ format-currency this.current_price }}</td>
+          <td>{{ format-currency this.subtotal }}</td>
+          <td><button href="#" {{ action 'removeItem' this }}>Remove</button></td>
+        </tr>
       {{/ each}}
       <tr>
         <td><strong>Total</strong></td>
         <td></td>
         <td></td>
         <td> {{ format-currency total }} </td>
+        <td></td>
       </tr>
     </tbody>
   </table>
