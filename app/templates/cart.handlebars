@@ -11,7 +11,7 @@
     <tbody>
     {{# each items}}
       <tr>
-        <td>{{ this.product.name }}</td>
+        <td>{{ product.name }}</td>
         <td>{{ input type="number" value=quantity min=1 }}</td>
         <td>{{ format-currency this.current_price }}</td>
         <td>{{ format-currency this.subtotal }}</td>
