@@ -6,7 +6,7 @@ App.Router.map(function(){
   });
 
   this.resource('orders');
-  this.resource('order', { path: '/orders/:order_id' });
+  this.resource('order', { path: '/order' });
 
   this.resource('cart',function(){
     this.route('checkout')
