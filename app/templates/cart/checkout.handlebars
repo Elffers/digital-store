@@ -27,5 +27,5 @@
     <label for="expiration">Expiration</label>
     {{input type='text' value=expiration class='form-control'}}
   </div>
-  {{# link-to 'order' class='btn btn-info' }}Purchase!{{/link-to}}
+  <button class='btn btn-success' {{action "purchase" this}}>Purchase!</button>
 </div>

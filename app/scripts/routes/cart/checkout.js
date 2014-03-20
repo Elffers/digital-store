@@ -5,7 +5,8 @@ App.CartCheckoutRoute = Ember.Route.extend({
 
   actions: {
     purchase: function(proxy){
-      var self = this
+      var self = this;
+      var cart = this.modelFor('application');
       var order = this.store.createRecord("order", proxy);
       order.set('status', 'pending');
       order.set('cart', this.modelFor('cart'));
