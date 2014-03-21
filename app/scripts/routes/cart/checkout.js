@@ -13,7 +13,7 @@ App.CartCheckoutRoute = Ember.Route.extend({
         order.set('cart', cart);
         order.set('total', cart.get('total'));
         order.save().then(
-          function(order){
+        function(order){
             self.transitionTo("order", order)
           },
           function(error){
