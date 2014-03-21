@@ -1,13 +1,15 @@
 <div class='container'>
-  <h1>Welcome Digital Store</h1>
-  <p class='lead'>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+  <div class='row'>
+    <span class='col-md-11'>
+      <h1>Welcome to the Digital Store</h1></span>
+    <div class='col-md-1'>
+      {{# link-to 'cart' class='btn btn-primary cart-button'}}View your cart {{/link-to }}
+    </div>
+  </div>
   <hr>
-  {{# link-to 'cart' }}
-  View your cart
-  {{/link-to }}
 
   {{outlet}}
   {{ outlet modal }}
 
-  <div class='text-muted'><small>Foot</small></div>
+  <hr>
 </div>
