@@ -5,10 +5,9 @@ App.ApplicationController = Ember.ObjectController.extend({
       var cart = this.store.createRecord("cart");
       cart.save().then(function(cart) {
         localStorage.cart_id = cart.get('id')
-        })
-      }
+      })
+    }
     var cart = this.store.find("cart", localStorage.cart_id);
     this.set("cart", cart)
   }
-
 })

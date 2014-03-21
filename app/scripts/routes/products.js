@@ -25,8 +25,8 @@ App.ProductsRoute = Ember.Route.extend({
             newItem.save();
           }
         })
-        this.transitionTo('cart');
       });
+      this.transitionTo('cart');
     }
   }
 })
