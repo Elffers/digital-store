@@ -11,14 +11,14 @@
     <tbody>
       {{# each items}}
         <tr>
-          <td>{{ product.name }}</td>
+          <td>{{#link-to 'product' this.product}}{{ product.name }}{{/link-to}}</td>
           <td>{{ quantity }}
           <button {{ action 'add' this }}>+</button>
           <button {{ action 'subtract' this }}>-</button>
           </td>
           <td>{{ format-currency this.current_price }}</td>
           <td>{{ format-currency this.subtotal }}</td>
-          <td><button href="#" {{ action 'removeItem' this }}>Remove</button></td>
+          <td><button href="#" {{ action 'removeItem' this }} class="btn btn-warning">Remove</button></td>
         </tr>
       {{/ each}}
       <tr>
@@ -30,7 +30,7 @@
       </tr>
     </tbody>
   </table>
-  {{# link-to 'cart.checkout' class='btn btn-default' }}Checkout{{/link-to}}
+  {{# link-to 'cart.checkout' class='btn btn-success' }}Checkout{{/link-to}}
 </div>
 
 {{ outlet "checkout" }}
