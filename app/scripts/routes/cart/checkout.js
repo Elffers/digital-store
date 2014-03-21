@@ -16,9 +16,10 @@ App.CartCheckoutRoute = Ember.Route.extend({
         order.save().then(function(order){
             var cart = self.store.createRecord('cart');
             cart.save().then(function(cart){
-              localStorage.cart_id = cart.cart_id;
+              localStorage.cart_id = cart.get('id');
               self.controllerFor('application').set('cart', self.store.find("cart", localStorage.cart_id))
             })
+            self.transitionTo("order", order)
           },
 
           function(error){
@@ -27,7 +28,6 @@ App.CartCheckoutRoute = Ember.Route.extend({
             alert(error.responseText)
           })
 
-        self.transitionTo("order", order)
         });
 
       }
