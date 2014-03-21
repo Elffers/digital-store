@@ -1,6 +1,6 @@
 App.CartRoute = Ember.Route.extend({
   model: function () {
-    return this.modelFor("application")
+    return this.controllerFor("application").get('cart')
   },
   actions: {
     removeItem: function(item) {
