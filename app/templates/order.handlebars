@@ -3,12 +3,34 @@
   <ul>
     <li>Total: {{ format-currency total }}</li>
     <li>Status: {{ status }}</li>
-    <li>credit card: {{ credit_card }}</li>
-    <li>credit card: {{ cvv }}</li>
+    <li>credit card: {{ last-four credit_card }}</li>
   </ul>
-  <ul>
-    {{# each cart.items}}
-    <li>{{ this.product.name }}</li>
-    {{/each}}
-  </ul>
+  <h2>Cart Details</h2>
+  <table class='table table-hover'>
+    <thead>
+      <th>Product</th>
+      <th>Quantity</th>
+      <th>Price</th>
+      <th>Subtotal</th>
+      <th></th>
+    </thead>
+    <tbody>
+      {{# each cart.items }}
+        <tr>
+          <td>{{ product.name }}</td>
+          <td>{{ quantity }}</td>
+          <td>{{ format-currency this.current_price }}</td>
+          <td>{{ format-currency this.subtotal }}</td>
+          <td></td>
+        </tr>
+      {{/ each}}
+      <tr>
+        <td><strong>Total</strong></td>
+        <td></td>
+        <td></td>
+        <td> {{ format-currency total }} </td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
 </div>
