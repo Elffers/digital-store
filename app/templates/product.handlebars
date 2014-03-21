@@ -1,12 +1,12 @@
 <div class='row'>
-  <div class='col-lg-6'>
+  <span class='col-lg-6'>
     <h1>{{ name }}
       <small class='muted'>{{ format-currency price }}</small>
     </h1>
-  </div>
-  <div class='col-lg-2'>
-    <a href="#" {{ action 'addToCart' this }}>Add To Cart!</a>
-  </div>
+  </span>
+  <span class='col-lg-2'>
+    <a href="#" {{ action 'addToCart' this }} class='btn btn-success'>Add To Cart!</a>
+  </span>
 <div>
 
 <div class='row'>
