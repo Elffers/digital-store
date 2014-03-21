@@ -294,7 +294,7 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
   data.buffer.push(escapeExpression((helper = helpers['format-currency'] || (depth0 && depth0['format-currency']),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data},helper ? helper.call(depth0, "price", options) : helperMissing.call(depth0, "format-currency", "price", options))));
   data.buffer.push("</small>\n    </h1>\n  </span>\n  <span class='col-lg-2'>\n    <a href=\"#\" ");
   data.buffer.push(escapeExpression(helpers.action.call(depth0, "addToCart", "", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0,depth0],types:["STRING","ID"],data:data})));
-  data.buffer.push(" class='btn btn-success'>Add To Cart!</a>\n  </span>\n<div>\n\n<div class='row'>\n  <div class='col-lg-8'>\n    <img ");
+  data.buffer.push(" class='btn btn-success'>Add To Cart!</a>\n  </span>\n</div>\n\n<div class='row'>\n  <div class='col-lg-8'>\n    <img ");
   data.buffer.push(escapeExpression(helpers['bind-attr'].call(depth0, {hash:{
     'src': ("image")
   },hashTypes:{'src': "ID"},hashContexts:{'src': depth0},contexts:[],types:[],data:data})));

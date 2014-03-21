@@ -5,12 +5,14 @@ App.CartRoute = Ember.Route.extend({
   actions: {
     removeItem: function(item) {
       var store = this.store;
-      var cart = this.modelFor('application');
-      cart.get("items").then(function(items){
-        items.removeObject(item);
-        item.deleteRecord(item);
-        item.save();
-      });
+
+      this.controllerFor('application').get('cart').then(function(cart){
+        cart.get("items").then(function(items){
+          items.removeObject(item);
+          item.deleteRecord(item);
+          item.save()
+        })
+      })
     },
 
     add: function(item){
