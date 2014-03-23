@@ -5,8 +5,14 @@ App.OrdersRoute = Ember.Route.extend({
 
   actions: {
     update: function(order){
-      order.set('status', 'paid');
-      order.save()
+      if(order.get('status') == "pending"){
+        order.set('status', 'paid');
+        order.save()
+      } else if (order.get('status') == "cancelled"){
+        alert("This order is cancelled!")
+      } else {
+        alert("Already paid!")
+      }
     }
   }
 })
