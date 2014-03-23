@@ -1,13 +1,17 @@
 <h1>ADMIN PAGE</h1>
-<div class='row'>
+<div class='container'>
   <div class='col-lg-8'>
-    <h2>
+    {{#link-to 'orders' class='btn btn-info'}}Manage Orders{{/link-to}}
+  </div>
+  <div class='col-lg-8'>
+    <span class='row'><h2>
       Products
-      {{#link-to 'productNew' class='btn btn-info'}}Add Product{{/link-to}}
-    </h2>
+      {{#link-to 'productNew' class='btn btn-primary'}}Add Product{{/link-to}}
+    </h2></span>
     <table class='table table-hover'>
       <thead>
         <th>Name</th>
+        <th>Price</th>
         <th>Edit</th>
         <th>Remove</th>
       </thead>
@@ -18,6 +22,7 @@
             <img {{ bind-attr src=avatar }}>
             {{#link-to 'product' this }}{{ name }}{{/link-to}}
           </td>
+          <td>{{ format-currency price }} </td>
           <td><button {{#link-to 'productEdit' this }}Edit{{/link-to}}</td>
           <td><button {{ action 'deleteProduct' this }}>Delete</button></td>
         </tr>
@@ -25,7 +30,5 @@
       </tbody>
     </table>
   </div>
-  <div class='col-lg-4'>
-    {{#link-to 'orders'}}Orders{{/link-to}}
-  </div>
+
 </div>

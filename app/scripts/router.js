@@ -5,7 +5,6 @@ App.Router.map(function(){
     this.resource('product', { path: ':product_id' })
   });
 
-  this.resource('orders');
   this.resource('order', { path: '/orders/:order_id' });
 
   this.resource('cart',function(){
@@ -15,5 +14,6 @@ App.Router.map(function(){
   this.route('admin');
   this.route('productNew', { path:'products/new' });
   this.route('productEdit', { path:'products/:product_id/edit' });
+  this.resource('orders', { path: '/admin/orders' });
 
 });
