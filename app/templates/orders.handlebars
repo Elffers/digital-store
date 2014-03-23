@@ -1,10 +1,10 @@
-ORDERS
 <h1>Orders Index</h1>
 <div class='row'>
-  <div class='col-lg-4'>
+  <div class='col-lg-8'>
     <table class='table table-hover'>
       <thead>
         <th>Customer</th>
+        <th>Update</th>
         <th>Status</th>
       </thead>
       <tbody>
@@ -12,8 +12,11 @@ ORDERS
           <tr>
             <td>
               {{# link-to "order" this}}
-              {{ customer_name }}
+                {{ customer_name }}
               {{/ link-to }}
+            </td>
+            <td>
+              BUTTON
             </td>
             <td>
               {{ status }}
@@ -22,10 +25,5 @@ ORDERS
         {{/each}}
       </tbody>
     </table>
-  </div>
-  <div class='col-lg-8'>
-    {{ outlet }}
-    {{ outlet sidebar }}
-
   </div>
 </div>

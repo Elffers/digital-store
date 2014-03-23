@@ -41,7 +41,13 @@ function program6(depth0,data) {
   data.buffer.push("Edit");
   }
 
-  data.buffer.push("<h1>ADMIN PAGE</h1>\n<div class='row'>\n  <div class='col-lg-6'>\n    <h2>Orders</h2>\n    <table class='table table-hover'>\n      <thead>\n        <th>Customer</th>\n        <th>Status</th>\n        <th>Update</th>\n      </thead>\n      <tbody>\n    </table>\n  </div>\n  <div class='col-lg-6'>\n    <h2>\n      Products\n      ");
+function program8(depth0,data) {
+  
+  
+  data.buffer.push("Orders");
+  }
+
+  data.buffer.push("<h1>ADMIN PAGE</h1>\n<div class='row'>\n  <div class='col-lg-8'>\n    <h2>\n      Products\n      ");
   stack1 = (helper = helpers['link-to'] || (depth0 && depth0['link-to']),options={hash:{
     'class': ("btn btn-info")
   },hashTypes:{'class': "STRING"},hashContexts:{'class': depth0},inverse:self.noop,fn:self.program(1, program1, data),contexts:[depth0],types:["STRING"],data:data},helper ? helper.call(depth0, "productNew", options) : helperMissing.call(depth0, "link-to", "productNew", options));
@@ -49,7 +55,10 @@ function program6(depth0,data) {
   data.buffer.push("\n    </h2>\n    <table class='table table-hover'>\n      <thead>\n        <th>Name</th>\n        <th>Edit</th>\n        <th>Remove</th>\n      </thead>\n      <tbody>\n      ");
   stack1 = helpers.each.call(depth0, {hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(3, program3, data),contexts:[],types:[],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("\n      </tbody>\n    </table>\n  </div>\n</div>");
+  data.buffer.push("\n      </tbody>\n    </table>\n  </div>\n  <div class='col-lg-4'>\n    ");
+  stack1 = (helper = helpers['link-to'] || (depth0 && depth0['link-to']),options={hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(8, program8, data),contexts:[depth0],types:["STRING"],data:data},helper ? helper.call(depth0, "manageOrders", options) : helperMissing.call(depth0, "link-to", "manageOrders", options));
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push("\n  </div>\n</div>");
   return buffer;
   
 });
@@ -211,6 +220,16 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
   
 });
 
+Ember.TEMPLATES["manageOrders"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
+this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
+  
+
+
+  data.buffer.push("<h1>Orders</h1>\n");
+  
+});
+
 Ember.TEMPLATES["order"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
 this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
@@ -259,7 +278,7 @@ function program1(depth0,data) {
 Ember.TEMPLATES["orders"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
 this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
-  var buffer = '', stack1, helper, options, self=this, helperMissing=helpers.helperMissing, escapeExpression=this.escapeExpression;
+  var buffer = '', stack1, self=this, helperMissing=helpers.helperMissing;
 
 function program1(depth0,data) {
   
@@ -267,7 +286,7 @@ function program1(depth0,data) {
   data.buffer.push("\n          <tr>\n            <td>\n              ");
   stack1 = (helper = helpers['link-to'] || (depth0 && depth0['link-to']),options={hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(2, program2, data),contexts:[depth0,depth0],types:["STRING","ID"],data:data},helper ? helper.call(depth0, "order", "", options) : helperMissing.call(depth0, "link-to", "order", "", options));
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("\n            </td>\n            <td>\n              ");
+  data.buffer.push("\n            </td>\n            <td>\n              BUTTON\n            </td>\n            <td>\n              ");
   stack1 = helpers._triageMustache.call(depth0, "status", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
   data.buffer.push("\n            </td>\n          </tr>\n        ");
@@ -276,22 +295,17 @@ function program1(depth0,data) {
 function program2(depth0,data) {
   
   var buffer = '', stack1;
-  data.buffer.push("\n              ");
+  data.buffer.push("\n                ");
   stack1 = helpers._triageMustache.call(depth0, "customer_name", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
   data.buffer.push("\n              ");
   return buffer;
   }
 
-  data.buffer.push("ORDERS\n<h1>Orders Index</h1>\n<div class='row'>\n  <div class='col-lg-4'>\n    <table class='table table-hover'>\n      <thead>\n        <th>Customer</th>\n        <th>Status</th>\n      </thead>\n      <tbody>\n        ");
+  data.buffer.push("<h1>Orders Index</h1>\n<div class='row'>\n  <div class='col-lg-8'>\n    <table class='table table-hover'>\n      <thead>\n        <th>Customer</th>\n        <th>Update</th>\n        <th>Status</th>\n      </thead>\n      <tbody>\n        ");
   stack1 = helpers.each.call(depth0, {hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(1, program1, data),contexts:[],types:[],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("\n      </tbody>\n    </table>\n  </div>\n  <div class='col-lg-8'>\n    ");
-  stack1 = helpers._triageMustache.call(depth0, "outlet", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
-  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("\n    ");
-  data.buffer.push(escapeExpression((helper = helpers.outlet || (depth0 && depth0.outlet),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data},helper ? helper.call(depth0, "sidebar", options) : helperMissing.call(depth0, "outlet", "sidebar", options))));
-  data.buffer.push("\n\n  </div>\n</div>");
+  data.buffer.push("\n      </tbody>\n    </table>\n  </div>\n</div>");
   return buffer;
   
 });

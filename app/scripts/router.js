@@ -15,6 +15,6 @@ App.Router.map(function(){
   this.route('admin');
   this.route('productNew', { path:'products/new' });
   this.route('productEdit', { path:'products/:product_id/edit' });
-
+  this.route('manageOrders', { path: 'orders/update'} )
 
 });
