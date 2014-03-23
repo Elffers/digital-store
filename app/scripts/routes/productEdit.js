@@ -10,7 +10,7 @@ App.ProductEditRoute = Ember.Route.extend({
       product.set('image', proxy.get('image'));
       product.set('avatar', proxy.get('avatar'));
       product.save();
-      this.transitionTo('admin');
+      this.transitionTo('product', product);
     }
   }
 })
