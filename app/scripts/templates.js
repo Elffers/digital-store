@@ -1,40 +1,24 @@
 Ember.TEMPLATES["admin"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
 this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
-  var buffer = '', stack1, helper, options, self=this, helperMissing=helpers.helperMissing, escapeExpression=this.escapeExpression;
+  var buffer = '', stack1, escapeExpression=this.escapeExpression, self=this;
 
 function program1(depth0,data) {
   
-  var buffer = '', stack1, helper, options;
-  data.buffer.push("\n      <tr>\n        <td>\n          ");
-  stack1 = (helper = helpers['link-to'] || (depth0 && depth0['link-to']),options={hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(2, program2, data),contexts:[depth0,depth0],types:["STRING","ID"],data:data},helper ? helper.call(depth0, "order", "", options) : helperMissing.call(depth0, "link-to", "order", "", options));
-  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("\n        </td>\n        <td>\n          ");
-  stack1 = helpers._triageMustache.call(depth0, "status", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
-  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("\n        </td>\n        <td>\n          <button href=\"#\" ");
-  data.buffer.push(escapeExpression(helpers.action.call(depth0, "update_status", "", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0,depth0],types:["STRING","ID"],data:data})));
-  data.buffer.push(">Update</button>\n        </td>\n      </tr>\n    ");
-  return buffer;
-  }
-function program2(depth0,data) {
-  
   var buffer = '', stack1;
-  data.buffer.push("\n          ");
-  stack1 = helpers._triageMustache.call(depth0, "customer_name", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
+  data.buffer.push("\n    <li>");
+  stack1 = helpers._triageMustache.call(depth0, "name", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("\n          ");
+  data.buffer.push("\n      <button ");
+  data.buffer.push(escapeExpression(helpers.action.call(depth0, "deleteProduct", "", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0,depth0],types:["STRING","ID"],data:data})));
+  data.buffer.push("> Delete</button>\n    </li>\n    ");
   return buffer;
   }
 
-  data.buffer.push("<h1>ADMIN PAGE</h1>\n<div class='row'>\n  <div class='col-lg-6'>\n    <h2>Orders</h2>\n    <table class='table table-hover'>\n      <thead>\n        <th>Customer</th>\n        <th>Status</th>\n        <th>Update</th>\n      </thead>\n      <tbody>\n      ");
+  data.buffer.push("<h1>ADMIN PAGE</h1>\n<div class='row'>\n<div class='col-lg-6'>\n    <h2>Orders</h2>\n    <table class='table table-hover'>\n      <thead>\n        <th>Customer</th>\n        <th>Status</th>\n        <th>Update</th>\n      </thead>\n      <tbody>\n\n    </table>\n  </div>\n  <div class='col-lg-6'>\n    <h2>Products</h2>\n    <ul>");
   stack1 = helpers.each.call(depth0, {hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(1, program1, data),contexts:[],types:[],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("\n    </table>\n    <!-- ");
-  data.buffer.push(escapeExpression((helper = helpers.render || (depth0 && depth0.render),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0,depth0],types:["STRING","ID"],data:data},helper ? helper.call(depth0, "order", "order", options) : helperMissing.call(depth0, "render", "order", "order", options))));
-  data.buffer.push(" -->\n  </div>\n  <div class='col-lg-6'>\n    <h2>Products</h2>\n    <!-- ");
-  data.buffer.push(escapeExpression((helper = helpers.render || (depth0 && depth0.render),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0,depth0],types:["STRING","ID"],data:data},helper ? helper.call(depth0, "product", "product", options) : helperMissing.call(depth0, "render", "product", "product", options))));
-  data.buffer.push(" -->\n  </div>\n</div>");
+  data.buffer.push("\n  </ul>\n  </div>\n</div>");
   return buffer;
   
 });
