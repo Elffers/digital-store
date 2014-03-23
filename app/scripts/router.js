@@ -13,5 +13,6 @@ App.Router.map(function(){
   });
 
   this.route('admin');
+  this.route('productNew', { path:'products/new' });
 
 });

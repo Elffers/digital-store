@@ -14,6 +14,7 @@
   </div>
   <div class='col-lg-6'>
     <h2>Products</h2>
+    {{#link-to 'productNew'}}Add Product{{/link-to}}
     <ul>{{# each}}
     <li>{{ name }}
       <button {{ action 'deleteProduct' this }}> Delete</button>
