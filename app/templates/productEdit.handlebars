@@ -1,4 +1,4 @@
-<h1>List New Product</h1>
+<h1>Edit Product</h1>
 <div class='form'>
   <div class='form-group'>
     <label for="name">Name:</label>
@@ -21,6 +21,5 @@
     {{ textarea value=avatar rows=1 cols=100 }}
   </div>
 
-  <button {{ action "createProduct" this }}>Save!</button>
-
+  <button {{ action "update" this }}>Save!</button>
 </div>
