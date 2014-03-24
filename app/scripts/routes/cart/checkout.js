@@ -14,7 +14,7 @@ App.CartCheckoutRoute = Ember.Route.extend({
       }).then(function(){
 
         order.save().then(function(order){
-            var cart = self.store.createRecord('cart');
+          var cart = self.store.createRecord('cart');
             cart.save().then(function(cart){
               localStorage.cart_id = cart.get('id');
               self.controllerFor('application').set('cart', self.store.find("cart", localStorage.cart_id))
@@ -23,7 +23,7 @@ App.CartCheckoutRoute = Ember.Route.extend({
           },
 
           function(error){
-            console.log('OOPS');
+            console.log("uh oh");
             order.deleteRecord();
             alert(error.responseText)
           })
